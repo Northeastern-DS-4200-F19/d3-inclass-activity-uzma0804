@@ -86,14 +86,20 @@ To learn about data parsing visit: http://learnjsdata.com/time.html
           `.call(xAxis);`
 
 
-**Step15**: //Draw the line
+**Step15**: Draw the line
 
 `var line = d3.line()`\
-             `.x(function(d){return x(d.date);})`\     
+             `.x(function(d){return x(d.date);})`    
              `.y(function(d){return y(d.price);})`
 
 `chartGroup.append('path')`\
           `.attr('d',line(data));`
 
+**Step16**: Now if you save this and open the html in your browser, you will see that your linechart is messed up. THis is because, we have not added any CSS styling to it and because the fill of each path in the line chart is by default black and hence it looks that way. **So, open the line.css file and add:**\
+`path{`\
+	`stroke: *anycolor*;`\
+	`stroke-width:2px;`\
+	`fill:*make this none*;`\
+`}`
 
 
